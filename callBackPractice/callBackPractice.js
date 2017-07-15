@@ -20,11 +20,19 @@
 
 const foods = ['pineapple', 'mango', 'ribeye', 'curry', 'tacos', 'ribeye', 'mango'];
 
+const firstItem = (foods, cb) => {
+        cb(foods[0]);
+};
+
 firstItem(foods, (firstItem) => {
   console.log(`The first item is ${firstItem}.`);
 });
 
 // Write a function called getLength that passes the length of the array into the callback
+
+const getLength = (foods, cb) => {
+  cb(foods.length);
+};
 
 getLength(foods, (length) => {
   console.log(`The length of the array is ${length}.`);
@@ -32,18 +40,29 @@ getLength(foods, (length) => {
 
 // Write a function called last which passes the last item of the array into the callback
 
+const last = (foods, cb) => {
+  cb(foods.pop());
+};
+
 last(foods, (lastItem) => {
   console.log(`The last item in the array is ${lastItem}.`);
 });
 
 // Write a function called sumNums that adds two numbers and passes the result to the callback
 
+const sumNums = (x, y, sum, cb) =>{
+  cb(sum(x + y));
+};
 
 sumNums(5, 10, (sum) => {
   console.log(`The sum is ${sum}.`);
 });
 
 // Write a function called multiplyNums that adds two numbers and passes the result to the callback
+
+const multiplyNums = (x, y, product, cb) => {
+  cb(product(x * y));
+};
 
 multiplyNums(5, 10, (product) => {
   console.log(`The product is ${product}.`);
@@ -52,12 +71,29 @@ multiplyNums(5, 10, (product) => {
 // Write a function called contains that checks if an item is present inside of the given array.
 // Pass true to the callback if it is, otherwise pass false
 
+const contains = (foods, x, cb) => {
+  for(let i = 0; i < foods.length; i++)
+  if cb (x===foods[i]) {
+    return foods[i];
+  };
+  return false;
+};
+
 contains(foods, 'ribeye', (result) => {
   console.log(result ? 'ribeye is in the array' : 'ribeye is not in the array');
 });
 
 // Write a function called removeDuplicates that removes all duplicate values from the given array.
 // Pass the array to the callback function.  Do not mutate the original array.
+
+const foods2 = [food[0]]
+
+const removeDuplicates = (foods, cb) => {
+  for(let i = 1; i < foods.length; i++)
+  if cb(foods[i] !== foods[i]){
+    foods2.push(foods[i])
+  }
+}
 
 removeDuplicates(foods, (uniqueFoods) => {
   console.log(`foods with duplicates removed: ${uniqueFoods}`);
