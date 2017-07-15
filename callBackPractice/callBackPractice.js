@@ -93,6 +93,13 @@ removeDuplicates(foods, (uniqueFoods) => {
   console.log(`foods with duplicates removed: ${uniqueFoods}`);
 });
 
+const removeDuplicates(foods, cb) => {
+const newArray = []
+for (let i = 0; i < foods[i+1]; i++) {
+	if (foods[i] !== ) {
+		cb(newArray.push());
+	}
+};
 
 
 // Write a function called forEach that iterates over the provided array and passes the value and index into the callback.
@@ -102,8 +109,8 @@ forEach(foods, (value, index) => {
   console.log(`${value} is at index ${index}.`);
 });
 
-const forEach = (foods, cb) => {
-	for (let i = 0; i < foods.length; i++) {
-		cb(foods[i], i)
+const forEach = (value, cb) => {
+	for (let i = 0; i < value.length; i++) {
+		cb(value[i], i)
 	}
 };
