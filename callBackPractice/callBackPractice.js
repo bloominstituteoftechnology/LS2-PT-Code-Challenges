@@ -19,7 +19,7 @@
 // Write a function called firstItem that passes the first item of the given array to the callback function
 
 const firstItem = (arr , cb) => {
-  return cb(arr[0]);
+  cb(arr[0]);
 };
 
 const foods = ['pineapple', 'mango', 'ribeye', 'curry', 'tacos', 'ribeye', 'mango'];
@@ -77,8 +77,23 @@ contains(foods, 'ribeye', (result) => {
   console.log(result ? 'ribeye is in the array' : 'ribeye is not in the array');
 });
 
+// Write a function called removeDuplicates that removes all duplicate values from the given array.
+// Pass the array to the callback function.  Do not mutate the original array.
 
 
+const removeDuplicates = (array, cb) => {
+    const changedArray = array.sort();
+    for (let i = 0; i < changedArray.length; i++) {
+        if (changedArray[i] === changedArray[i + 1]) {
+            changedArray.splice(i + 1, 1);
+        }
+    }
+    cb(changedArray);
+};
+
+removeDuplicates(foods, (uniqueFoods) => {
+  console.log(`foods with duplicates removed: ${uniqueFoods}`);
+});
 // Write a function called forEach that iterates over the provided array and passes the value and index into the calconst.
 const forEach = (arr , cb) => {
   for (let i = 0;i<arr.length;i++) {
