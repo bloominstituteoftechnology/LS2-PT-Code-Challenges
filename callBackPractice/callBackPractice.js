@@ -20,8 +20,8 @@
 
 const foods = ['pineapple', 'mango', 'ribeye', 'curry', 'tacos', 'ribeye', 'mango'];
 
-const firstItem = (arr) => {
-	return arr[0];
+const firstItem = (arr, cb) => {
+	cb(arr[0]);
 };
 
 firstItem(foods, (firstItem) => {
@@ -29,11 +29,10 @@ firstItem(foods, (firstItem) => {
 });
 
 
-
 // Write a function called getLength that passes the length of the array into the callback
 
-const getLength = (foods, length) => {
-	return foods.length;
+const getLength = (arr, cb) => {
+	cb(arr.length);
 };
 
 getLength(foods, (length) => {
@@ -41,11 +40,10 @@ getLength(foods, (length) => {
 });
 
 
-
 // Write a function called last which passes the last item of the array into the callback
 
-const last = (foods) => {
-	return foods.pop();
+const last = (arr, cb) => {
+	cb(arr[arr.length - 1]);
 }
 
 last(foods, (lastItem) => {
@@ -55,8 +53,8 @@ last(foods, (lastItem) => {
 
 // Write a function called sumNums that adds two numbers and passes the result to the callback
 
-const sumNums = (num1, num2) => {
-	return num1 + num2;
+const sumNums = (num1, num2, cb) => {
+	cb(num1 + num2);
 }
 
 sumNums(5, 10, (sum) => {
@@ -65,8 +63,8 @@ sumNums(5, 10, (sum) => {
  
 // Write a function called multiplyNums that multiplies two numbers and passes the result to the callback
 
-const multiplyNums = (num1, num2) => {
-	return num1 * num2;
+const multiplyNums = (num1, num2, cb) => {
+	 cb(num1 * num2);
 }
 
 multiplyNums(5, 10, (product) => {
@@ -77,20 +75,33 @@ multiplyNums(5, 10, (product) => {
 // Write a function called contains that checks if an item is present inside of the given array.
 // Pass true to the callback if it is, otherwise pass false
 
-const contains = (foods) => {
-	for(let i = 0; i < food.length; i++) {
-		if(item === foods[i]) {
-			return true;
-		}	return false;
-	};
-};
+//First attempt was trying to use forEach method
+
+// const contains = (arr, item, cb) =>
+// 	arr.forEach((item) => {
+
+// 	})
+
+const contains = (arr, item, cb) => {
+	let result = false;
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i] === item) result = true;
+	}
+	cb(result);
+}
+
 
 contains(foods, 'ribeye', (result) => {
   console.log(result ? 'ribeye is in the array' : 'ribeye is not in the array');
 });
 
+
 // Write a function called removeDuplicates that removes all duplicate values from the given array.
 // Pass the array to the callback function.  Do not mutate the original array.
+
+const removeDuplicates = (arr, item, cb) => {
+	arr.filter()
+}
 
 removeDuplicates(foods, (uniqueFoods) => {
   console.log(`foods with duplicates removed: ${uniqueFoods}`);
