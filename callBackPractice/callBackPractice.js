@@ -30,7 +30,7 @@ firstItem(foods, (firstItem) => {
 
 // Write a function called getLength that passes the length of the array into the callback
 const getLength = (arr ,cb) => {
-  return cb(arr.length);
+   cb(arr.length);
 };
 
 getLength(foods, (length) => {
@@ -39,7 +39,7 @@ getLength(foods, (length) => {
 
 // Write a function called last which passes the last item of the array into the callback
 const last = (arr, cb) => {
-  return cb(arr[arr.length-1]);
+   cb(arr[arr.length-1]);
 };
 
 last(foods, (lastItem) => {
@@ -48,7 +48,7 @@ last(foods, (lastItem) => {
 
 // Write a function called sumNums that adds two numbers and passes the result to the callback
 const sumNums = (num1, num2, cb) => {
-  return cb(num1 + num2);
+   cb(num1 + num2);
 };
 
 
@@ -59,7 +59,7 @@ sumNums(5, 10, (sum) => {
 // Write a function called multiplyNums that adds two numbers and passes the result to the callback
 const multiplyNums = (num1, num2, cb) => {
 
-  return cb(num1 * num1);
+ cb(num1 * num1);
 
 };
 
