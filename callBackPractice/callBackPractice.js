@@ -20,37 +20,70 @@
 
 const foods = ['pineapple', 'mango', 'ribeye', 'curry', 'tacos', 'ribeye', 'mango'];
 
+const firstItem = (arr) => {
+	return arr[0];
+};
+
 firstItem(foods, (firstItem) => {
   console.log(`The first item is ${firstItem}.`);
 });
 
+
+
 // Write a function called getLength that passes the length of the array into the callback
+
+const getLength = (foods, length) => {
+	return foods.length;
+};
 
 getLength(foods, (length) => {
   console.log(`The length of the array is ${length}.`);
 });
 
+
+
 // Write a function called last which passes the last item of the array into the callback
+
+const last = (foods) => {
+	return foods.pop();
+}
 
 last(foods, (lastItem) => {
   console.log(`The last item in the array is ${lastItem}.`);
 });
 
+
 // Write a function called sumNums that adds two numbers and passes the result to the callback
 
+const sumNums = (num1, num2) => {
+	return num1 + num2;
+}
 
 sumNums(5, 10, (sum) => {
   console.log(`The sum is ${sum}.`);
-});
 
-// Write a function called multiplyNums that adds two numbers and passes the result to the callback
+ 
+// Write a function called multiplyNums that multiplies two numbers and passes the result to the callback
+
+const multiplyNums = (num1, num2) => {
+	return num1 * num2;
+}
 
 multiplyNums(5, 10, (product) => {
   console.log(`The product is ${product}.`);
 });
 
+
 // Write a function called contains that checks if an item is present inside of the given array.
 // Pass true to the callback if it is, otherwise pass false
+
+const contains = (foods) => {
+	for(let i = 0; i < food.length; i++) {
+		if(item === foods[i]) {
+			return true;
+		}	return false;
+	};
+};
 
 contains(foods, 'ribeye', (result) => {
   console.log(result ? 'ribeye is in the array' : 'ribeye is not in the array');
