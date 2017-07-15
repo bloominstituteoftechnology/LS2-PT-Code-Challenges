@@ -68,12 +68,9 @@ multiplyNums(5, 10, (product) => {
 
 // Write a function called contains that checks if an item is present inside of the given array.
 // Pass true to the callback if it is, otherwise pass false
+
 const contains = (array, findThis, cb) => {
-  array.find((element) => { //could be written as a for loop
-    if(element === findThis) {
-      cb(true);
-    }
-  });
+    cb(array.includes(findThis));
 };
 contains(foods, 'ribeye', (result) => {
   console.log(result ? 'ribeye is in the array' : 'ribeye is not in the array');
@@ -82,7 +79,7 @@ contains(foods, 'ribeye', (result) => {
 // Write a function called removeDuplicates that removes all duplicate values from the given array.
 // Pass the array to the callback function.  Do not mutate the original array.
 const removeDuplicates = (array, cb) => {
-    newArray = [];
+    const newArray = array.filter((element, index, origArray) => index == origArray.indexOf(element));
     //array.forEach
 };
 
