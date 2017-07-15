@@ -50,8 +50,8 @@ last(foods, (lastItem) => {
 
 // Write a function called sumNums that adds two numbers and passes the result to the callback
 
-const sumNums = (x, y, sum, cb) =>{
-  cb(sum(x + y));
+const sumNums = (x, y, cb) =>{
+  cb(x + y);
 };
 
 sumNums(5, 10, (sum) => {
@@ -60,8 +60,8 @@ sumNums(5, 10, (sum) => {
 
 // Write a function called multiplyNums that adds two numbers and passes the result to the callback
 
-const multiplyNums = (x, y, product, cb) => {
-  cb(product(x * y));
+const multiplyNums = (x, y, cb) => {
+  cb(x * y);
 };
 
 multiplyNums(5, 10, (product) => {
@@ -86,7 +86,7 @@ contains(foods, 'ribeye', (result) => {
 // Write a function called removeDuplicates that removes all duplicate values from the given array.
 // Pass the array to the callback function.  Do not mutate the original array.
 
-const foods2 = [food[0]]
+// const foods2 = [food[0]]
 
 const removeDuplicates = (foods, cb) => {
   for(let i = 1; i < foods.length; i++)
