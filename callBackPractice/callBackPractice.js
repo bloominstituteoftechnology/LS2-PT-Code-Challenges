@@ -104,10 +104,8 @@ removeDuplicates(foods, (uniqueFoods) => {
 // Write a function called forEach that iterates over the provided array and passes the value and index into the callback.
 
 const forEach = (array, cb) => {
-	//So close, works but doesn't. Meaning if you have duplicates it doesn't work like it should.
-	//Was having issues getting .entries() to work.
 	for (let i = 0; i < array.length; i++) {
-		cb(array[i], array.indexOf(array[i]));
+		cb(array[i], i);
 	}
 };
 
