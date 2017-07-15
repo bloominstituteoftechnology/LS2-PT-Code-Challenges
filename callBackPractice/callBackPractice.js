@@ -41,7 +41,7 @@ getLength(foods, (length) => {
 
 // Write a function called last which passes the last item of the array into the callback
 const last = (array, cb) => {
-  return cb(array.pop());
+  return cb(array[array.length - 1]);
 };
 
 last(foods, (lastItem) => {
