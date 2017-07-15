@@ -20,8 +20,8 @@
 
 const foods = ['pineapple', 'mango', 'ribeye', 'curry', 'tacos', 'ribeye', 'mango'];
 
-const firstItem = arr => {
-  return arr[0];
+const firstItem = (arr, cb) => {
+  cb(arr[0]);
 };
 
 firstItem(foods, (firstItem) => {
@@ -30,8 +30,8 @@ firstItem(foods, (firstItem) => {
 
 // Write a function called getLength that passes the length of the array into the callback
 
-const getLength = arr => {
-  return arr.length;
+const getLength = (arr, cb) => {
+  cb(arr.length);
 };
 
 getLength(foods, (length) => {
@@ -40,8 +40,8 @@ getLength(foods, (length) => {
 
 // Write a function called last which passes the last item of the array into the callback
 
-const last = arr => {
-  return arr.length - 1; // Minus 1 because arrays start at 0, and .length doesn't account for that.
+const last = (arr, cb) => {
+  cb(arr[arr.length - 1]); // Minus 1 because arrays start at 0, and .length doesn't account for that.
 };
 
 last(foods, (lastItem) => {
@@ -50,8 +50,8 @@ last(foods, (lastItem) => {
 
 // Write a function called sumNums that adds two numbers and passes the result to the callback
 
-const sumNums = (num1, num2) => {
-  return num1 + num2;
+const sumNums = (num1, num2, cb) => {
+  cb(num1 + num2);
 };
 
 sumNums(5, 10, (sum) => {
@@ -60,8 +60,8 @@ sumNums(5, 10, (sum) => {
 
 // Write a function called multiplyNums that adds two numbers and passes the result to the callback
 
-const multiplyNums = (num1, num2) => {
-  return num1 * num2;
+const multiplyNums = (num1, num2, cb) => {
+  cb(num1 * num2);
 };
 
 multiplyNums(5, 10, (product) => {
@@ -71,9 +71,8 @@ multiplyNums(5, 10, (product) => {
 // Write a function called contains that checks if an item is present inside of the given array.
 // Pass true to the callback if it is, otherwise pass false
 
-const contains = (arr, item) => {
-  if (arr.indexOf(item) > -1) return true;
-  return false;
+const contains = (arr, item, cb) => {
+  cb(arr.includes(item));
 };
 
 contains(foods, 'ribeye', (result) => {
@@ -83,8 +82,8 @@ contains(foods, 'ribeye', (result) => {
 // Write a function called removeDuplicates that removes all duplicate values from the given array.
 // Pass the array to the callback function.  Do not mutate the original array.
 
-const removeDuplicates = foods => {
-  return Array.from(new Set(foods));
+const removeDuplicates = (foods, cb) => {
+  cb(Array.from(new Set(foods)));
 };
 
 removeDuplicates(foods, (uniqueFoods) => {
@@ -93,9 +92,9 @@ removeDuplicates(foods, (uniqueFoods) => {
 
 // Write a function called forEach that iterates over the provided array and passes the value and index into the callback.
 
-const forEach = foods => {
-  foods.forEach((value, index) => {
-    return [value, index];
+const forEach = (arr, cb) => {
+  arr.forEach((value, i) => {
+    cb(value, i);
   });
 };
 
