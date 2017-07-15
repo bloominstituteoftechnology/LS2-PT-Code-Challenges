@@ -73,8 +73,8 @@ multiplyNums(5, 10, (product) => {
 
 const contains = (foods, x, cb) => {
   for(let i = 0; i < foods.length; i++)
-  if cb (x===foods[i]) {
-    return foods[i];
+  if (cb(x===foods[i])) {
+    return true;
   };
   return false;
 };
