@@ -20,83 +20,93 @@
 
 const foods = ['pineapple', 'mango', 'ribeye', 'curry', 'tacos', 'ribeye', 'mango'];
 
-const firstItem = (foods, firstItem) => {
-	firstItem = foods[0];
-  console.log(`The first item is ${firstItem}.`);
+const firstItem = (elements, cb) => {
+     cb(elements[0]);
 };
 
-const test1 = firstItem(foods);
-
+firstItem(foods, (firstItem) => {
+  console.log(`The first item is ${firstItem}.`);
+});
 
 // Write a function called getLength that passes the length of the array into the callback
 
-const getLength = (foods, length) => {
-  length = foods.length;
-  console.log(`The length of the array is ${length}.`);
+const getLength = (elements, cb) => {
+  cb(elements.length);
 };
 
-const test2 = getLength(foods);
+getLength(foods, (length) => {
+  console.log(`The length of the array is ${length}.`);
+});
 
 // Write a function called last which passes the last item of the array into the callback
 
-const last = (foods, lastItem) => {
-  lastItem = foods[foods.length-1];
-  console.log(`The last item in the array is ${lastItem}.`);
+const last = (elements, cb) => {
+   cb(elements[elements.length-1]);
 };
 
-const test3 = last(foods);
+last(foods, (lastItem) => {
+  console.log(`The last item in the array is ${lastItem}.`);
+});
 
 // Write a function called sumNums that adds two numbers and passes the result to the callback
 
-const sumNums = (value1, value2, sum) => {
-	sum = value1 + value2;
-  console.log(`The sum is ${sum}.`);
+const sumNums = (num1, num2, cb) => {
+   cb(num1+num2);
 };
 
-const test4 = sumNums(5, 10);
-
+sumNums(5, 10, (sum) => {
+  console.log(`The sum is ${sum}.`);
+});
 
 // Write a function called multiplyNums that adds two numbers and passes the result to the callback
 
-const multiplyNums = (value1, value2, product) => {
-  product = value1 * value2;
-  console.log(`The product is ${product}.`);
+const multiplyNums = (num1, num2, cb) => {
+   cb(num1*num2);
 };
 
-const test5 = multiplyNums(5, 10);
+multiplyNums(5, 10, (product) => {
+  console.log(`The product is ${product}.`);
+});
 
 // Write a function called contains that checks if an item is present inside of the given array.
 // Pass true to the callback if it is, otherwise pass false
 
-const contains = (foods, item, result) => {
-  
-  result = 0;
-  for (let i = 0; i < foods.length; i++){
-  	if (foods[i] === item) {
-  		result = 1;
-  	}
-
-  }
-  console.log(result ? 'ribeye is in the array' : 'ribeye is not in the array');
+const contains = (elements, item, cb) => {
+    let flag = false;
+    for (let i = 0; i < elements.length; i++) {
+      if (elements[i] === item) {
+        flag = true;
+      }
+    }   
+    cb(flag);
 };
 
-const test6 = contains(foods, 'ribeye');
+
+contains(foods, 'ribeye', (result) => {
+  console.log(result ? 'ribeye is in the array' : 'ribeye is not in the array');
+});
 
 // Write a function called removeDuplicates that removes all duplicate values from the given array.
 // Pass the array to the callback function.  Do not mutate the original array.
 
-const removeDuplicates = (foods, uniqueFoods) => {
-
-  console.log(`foods with duplicates removed: ${uniqueFoods}`);
+const removeDuplicates = (elements, cb) => {
+   
 };
 
-const test7 = removeDuplicates(foods);
+
+removeDuplicates(foods, (uniqueFoods) => {
+  console.log(`foods with duplicates removed: ${uniqueFoods}`);
+});
+
 
 // Write a function called forEach that iterates over the provided array and passes the value and index into the callback.
 
-/*
+const forEach = (elements, cb) => {
+  for (let i = 0; i < elements.length; i++) {
+    cb(elements[i], i);
+  }
+}
+
 forEach(foods, (value, index) => {
   console.log(`${value} is at index ${index}.`);
 });
-
-*/
