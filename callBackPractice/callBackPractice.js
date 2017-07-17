@@ -53,7 +53,7 @@ sumNums(5, 10, (sum) => {
 
 // Write a function called multiplyNums that adds two numbers and passes the result to the callback
 
-const multiplyNums = (a, b, cb) => cb(c * b);
+const multiplyNums = (a, b, cb) => cb(a * b);
 
 multiplyNums(5, 10, (product) => {
   console.log(`The product is ${product}.`);
@@ -63,8 +63,7 @@ multiplyNums(5, 10, (product) => {
 // Pass true to the callback if it is, otherwise pass false
 
 const contains = (arr, x, cb) => {
-  if (arr.indexOf(x) > -1) cb(true);
-  cb(false);
+  cb(arr.includes(x));
 };
 
 contains(foods, 'ribeye', (result) => {
@@ -76,10 +75,10 @@ contains(foods, 'ribeye', (result) => {
 
 const removeDuplicates = (arr, cb) => {
   const newArr = [];
-  for (let i = 0; i < arr.larr.length; i++) {
-    if (newArr.indexOf(arr[i]) > -1) newArr.push(arr[i]);
+  for (let i = 0; i < arr.length; i++) {
+    if (newArr.indexOf(arr[i]) === -1) newArr.push(arr[i]);
   }
-  return newArr;
+  cb(newArr);
 };
 
 removeDuplicates(foods, (uniqueFoods) => {
