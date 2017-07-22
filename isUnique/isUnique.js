@@ -3,14 +3,16 @@
  * Extra Credit - Answer this question - What if you cannot use additional data structures?
  */
 
-const arr = ['abcdefga'];
 
-const isUnique = (str) => {
-  if (arr.indexOf(str) === -1) {
+const isUnique = (str) => { 
+    const sortedString = str.split('').sort()
+    for(let i = 0; i < sortedString.length; i++) {
+        if (sortedString[i] === sortedString[i - 1]) {
+            return false;
+        } 
+    }
     return true;
-  }
-  return false;
-};
+}
 
 console.log(isUnique('abcdhijklmnopqrstuv')); // true
 console.log(isUnique('abcdefga')); // false
