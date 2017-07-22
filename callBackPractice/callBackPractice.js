@@ -90,7 +90,6 @@ const contains = (arr, item, cb) => {
 	cb(result);
 }
 
-
 contains(foods, 'ribeye', (result) => {
   console.log(result ? 'ribeye is in the array' : 'ribeye is not in the array');
 });
@@ -99,16 +98,21 @@ contains(foods, 'ribeye', (result) => {
 // Write a function called removeDuplicates that removes all duplicate values from the given array.
 // Pass the array to the callback function.  Do not mutate the original array.
 
-const removeDuplicates = (arr, item, cb) => {
-	arr.filter()
-}
+const removeDuplicates = (arr, cb) => {
+    const newArray = arr.filter((element, index, origArr) => index == origArr.indexOf(element));
+    cb(newArray);
+};
 
 removeDuplicates(foods, (uniqueFoods) => {
   console.log(`foods with duplicates removed: ${uniqueFoods}`);
 });
 
+
 // Write a function called forEach that iterates over the provided array and passes the value and index into the callback.
 
+const forEach = (arr, cb) => {
+  arr.forEach((element, item) => cb(element, item));
+};
 
 forEach(foods, (value, index) => {
   console.log(`${value} is at index ${index}.`);
