@@ -27,6 +27,6 @@ const evenOccurence = (arr) => {
   return null;
 };
 
-const onlyEven = evenOccurence([1, 7, 2, 4, 5, 6, 8, 9,]);
+const onlyEven = evenOccurence([1, 7, 2, 4, 5, 6, 8, 9, 1, 6, 6, 6]);
 
 console.log(onlyEven);
