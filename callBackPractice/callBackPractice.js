@@ -84,13 +84,13 @@ contains(foods, 'ribeye', (result) => {
 // Pass the array to the callback function.  Do not mutate the original array.
 
 const removeDuplicates = (array, cb) => {
-  //const newArray = [];
+  const newArray = [];
   array.forEach((element) => {
     for (let i = 0; i < array.length; i++) {
       if (element === array[i]) array.splice(element, 1);
     }
   });
-  return array;
+  return newArray;
 }
 
 removeDuplicates(foods, (uniqueFoods) => {
@@ -99,7 +99,7 @@ removeDuplicates(foods, (uniqueFoods) => {
 
 // Write a function called forEach that iterates over the provided array and passes the value and index into the callback.
 
-const forEach(array, cb) => {
+const forEach = (array, cb) => {
   for (let i = 0; i < array.length; i++) {
     return cb(array[i], i);
   }
