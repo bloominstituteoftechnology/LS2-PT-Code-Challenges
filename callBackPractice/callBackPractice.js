@@ -73,8 +73,8 @@ multiplyNums(5, 10, (product) => {
 
 const contains = (foods, x, cb) => {
   for(let i = 0; i < foods.length; i++)
-  if (cb(x===foods[i])) {
-    return true;
+  if (x===foods[i]) {
+    cb(true);
   };
   return false;
 };
@@ -86,13 +86,16 @@ contains(foods, 'ribeye', (result) => {
 // Write a function called removeDuplicates that removes all duplicate values from the given array.
 // Pass the array to the callback function.  Do not mutate the original array.
 
-// const foods2 = [food[0]]
+
 
 const removeDuplicates = (foods, cb) => {
-  for(let i = 1; i < foods.length; i++)
-  if cb(foods[i] !== foods[i]){
+  const foods2 = [];
+  foods.sort();
+  for(let i = 0; i < foods.length; i++)
+  if (foods[i] !== foods[i - 1]) {
     foods2.push(foods[i])
   }
+  cb(foods2);
 }
 
 removeDuplicates(foods, (uniqueFoods) => {
@@ -101,6 +104,10 @@ removeDuplicates(foods, (uniqueFoods) => {
 
 // Write a function called forEach that iterates over the provided array and passes the value and index into the callback.
 
+const forEach = (value, cb) => {
+  for(let i = 0; i < value.length; i++)
+    cb(value[i], i)
+}
 
 forEach(foods, (value, index) => {
   console.log(`${value} is at index ${index}.`);
