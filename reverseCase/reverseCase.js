@@ -15,7 +15,7 @@
         }
     }
     newOutput = output.join('');
-    console.log(newOutput);
+    return(newOutput);
  }
 
 reverseCase('Hello World')
