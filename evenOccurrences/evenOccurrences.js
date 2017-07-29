@@ -38,4 +38,8 @@ const onlyEven = evenOccurence(data);
 console.log(onlyEven);
 =======
 };
+<<<<<<< HEAD
 >>>>>>> a573fa2a9182487a5963e60a8994dd6be6e89206
+=======
+>>>>>>> c196dd3ae8842813a734ab7abf353501ebe8d52a
+>>>>>>> 0212c041359717fe3a9ac152732d610b5796a831
