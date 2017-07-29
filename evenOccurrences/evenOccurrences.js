@@ -12,6 +12,7 @@
 
 const evenOccurence = (arr) => {
   // Your code here.
+<<<<<<< HEAD
   const a = arr.reduce((acc, curr) => {
   	if (typeof acc[curr] == 'undefined') {
   		acc[curr] = 1;
@@ -35,3 +36,6 @@ const evenOccurence = (arr) => {
 const data = [1, 7, 2, 4, 5, 1, 6, 8, 9, 6, 4, 1];
 const onlyEven = evenOccurence(data);
 console.log(onlyEven);
+=======
+};
+>>>>>>> a573fa2a9182487a5963e60a8994dd6be6e89206
