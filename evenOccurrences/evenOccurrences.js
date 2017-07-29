@@ -12,4 +12,14 @@
 
 const evenOccurence = (arr) => {
   // Your code here.
+  const occurence = {};
+  for (let i = 0; i < arr.length; i++) {
+    const current = arr[i];
+    if (!occurence[i]) occurence[current] = 1;
+    else occurence[i]++;
+  }
+  const yarr = Object.keys(occurence);
+  for (let i = 0; i < yarr.length; i++) {
+    if (occurence[i] % 2 === 0) return yarr[i];
+  }
 };
