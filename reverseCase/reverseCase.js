@@ -4,7 +4,7 @@
  * Assume that each string will contain only spaces and letters.
  */
 
- const reverseCase(str) => {
+ const reverseCase = (str) => {
    const words = str.split(' ');
    const reverse = []
    for (let i = 0; i < words.length; i++) {
