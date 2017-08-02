@@ -17,6 +17,6 @@ if (char == char.toLowerCase()) {
   return result;
 };
 
-const res = reverseCase('SATISH vattikuti');
+const res = reverseCase('RAVI nandigam');
 
 console.log(res);
