@@ -7,11 +7,11 @@ const reverseCase = (string) => {
   let newString = '';
   for (let i =0; i < string.length; i++) {
     if(string[i] === string[i].toUpperCase()) {
-      newString += string[i].toLowerCase();
+      newString.push(string[i].toLowerCase());
     } else if (string[i] === string[i].toLowerCase()) {
-      newString += string[i].toUpperCase();
+      newString.push(string[i].toUpperCase());
     } else {
-      newString += string[i];
+      newString.push(string[i]);s
     }
   }
   return newString;
