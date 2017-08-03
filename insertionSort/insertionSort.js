@@ -10,7 +10,21 @@
 // Example usage:
 // insertionSort([2, 1, 3, 7, 4, 2, 9, 3, 8]); // yields [1, 2, 2, 3, 3, 4, 7, 8, 9]
 
-const insertionSort = (array) => {
+const insertionSort = (arr) => {
   // Your code goes here. Feel free to add helper functions if needed.
-  return array;
+  arr.forEach((value, i) => {
+    const currVal = arr[i];  // The value we're working on on this specific loop.
+
+    for (var j = i - 1; j > -1; j--) { // For all elements in the array that come before currVal.
+      if (currVal < arr[j]) { // If the currVal is less than the previous value.
+        arr[j+1] = arr[j]; // Shift the previous value one position up.
+      } else break; // If currVal is not less than previous value, it's in its correct spot, break loop.
+    }
+    arr[j+1] = currVal; // When we hit the correct spot for currVal (j+1), put it there.
+
+  });
+
+  return arr;
 };
+
+insertionSort([2, 1, 3, 7, 4, 2, 9, 3, 8])
