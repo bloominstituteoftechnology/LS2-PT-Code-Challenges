@@ -1,22 +1,3 @@
-/*
- * Write a function that accepts a tree data structure and a value to search for.
- * Search for the value using a breadth-first search algorithm.
- * Example:
- * const tree = {
- *	x: 1,
- *	y: 1,
- *	z: {
- *		x: 1,
- *		y: 1,
- *		z: 1,
- *		},
- *	a: 2,
- * };
- * breadthFirstSearch(tree, 2);// will return true before it recursively searches `z`
- */
-
-// First move horizonatally across all nodes of current layer before moving onto next layer.
-
 let value, keys, count = 0, traverseMe = [];
 const tree = {
  x: 1,
@@ -36,7 +17,10 @@ const recursMe = (tree, searchTerm) => { // O(n) linear complexity.
   keys = Object.keys(tree); // Make array of tree keys.
   for (let i = 0; i < keys.length; i++) { // Loop through the current layer of the tree, then pass in the next layer as a tree.
     value = tree[keys[i]];
-    if (value === searchTerm) console.log(`${value} is our value!`); return true;
+    if (value === searchTerm) {
+      console.log(`${value} is our value!`);
+      return true;
+    }
     console.log(`${value} is not our value.`);
     if (typeof(value) === 'object') { // If we're dealing with a multi-nested value, we need to mark it for traversal.
       traverseMe.push(value); // Add it to the list to get traversed.
