@@ -1,11 +1,14 @@
-let value, keys, count = 0, traverseMe = [];
+let value, keys;
+let flag = false;
+let count = 0;
+let traverseMe = [];
 const tree = {
  x: 1,
  y: 1,
  z: {
 	x: 1,
 	y: 1,
-	z: 5,
+	z: 4,
  },
  a: 5,
 };
@@ -17,9 +20,10 @@ const recursMe = (tree, searchTerm) => { // O(n) linear complexity.
   keys = Object.keys(tree); // Make array of tree keys.
   for (let i = 0; i < keys.length; i++) { // Loop through the current layer of the tree, then pass in the next layer as a tree.
     value = tree[keys[i]];
+
     if (value === searchTerm) {
       console.log(`${value} is our value!`);
-      return true;
+      flag = true;
     }
     console.log(`${value} is not our value.`);
     if (typeof(value) === 'object') { // If we're dealing with a multi-nested value, we need to mark it for traversal.
@@ -33,9 +37,10 @@ const recursMe = (tree, searchTerm) => { // O(n) linear complexity.
   if (traverseMe.length !== 0) { // If we have more to traverse, do so.
     traverseMe.forEach((tree) => {
       console.log(`Traversing into ${tree}.`);
-      recursMe(tree);
+      recursMe(tree, searchTerm);
     })
-  } else return false; // If we have no more to traverse and we haven't yet returned true that means it's false.
+  }// If we have no more to traverse and we haven't yet returned true that means it's false.
+  return flag;
 }
 
-recursMe(tree, 5) ? console.log("It is in there!") : console.log("It is not in there :(");
+recursMe(tree, 99) ? console.log("It is in there!") : console.log("It is not in there :(");
