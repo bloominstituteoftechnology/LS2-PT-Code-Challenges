@@ -11,8 +11,7 @@
 // insertionSort([2, 1, 3, 7, 4, 2, 9, 3, 8]); // yields [1, 2, 2, 3, 3, 4, 7, 8, 9]
 
 const insertionSort = (arr) => {
-  // Your code goes here. Feel free to add helper functions if needed.
-  arr.forEach((value, i) => {
+  arr.forEach((value, i) => { // This has to run through everything so it's all sorted.
     const currVal = arr[i];  // The value we're working on on this specific loop.
 
     for (var j = i - 1; j > -1; j--) { // For all elements in the array that come before currVal.
@@ -27,4 +26,4 @@ const insertionSort = (arr) => {
   return arr;
 };
 
-insertionSort([2, 1, 3, 7, 4, 2, 9, 3, 8])
+console.log(insertionSort([2, 1, 3, 7, 4, 2, 9, 3, 8]))

@@ -4,5 +4,5 @@
  *
  */
 const removeDuplicates = (arr) => {
-	//code here...
+  return Array.from(new Set(arr));
 };
