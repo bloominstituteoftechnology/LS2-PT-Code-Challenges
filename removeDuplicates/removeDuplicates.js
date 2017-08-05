@@ -5,7 +5,6 @@
  */
 const removeDuplicates = (arr) => {
 	//code here...
-<<<<<<< HEAD
 	const sortedArray = arr.sort();
 	for (let i = 0; i < sortedArray.length; i++) {
 		if (sortedArray[i] === sortedArray[i + 1]) {
@@ -19,6 +18,3 @@ const removeDuplicates = (arr) => {
 
 
 console.log(removeDuplicates([1, 1, 1,1,1, 2, 2, 3, 4, 5, 5]));
-=======
-};
->>>>>>> 6f640e314c6caba5c714903b33f1db26600561b4

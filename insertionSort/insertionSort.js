@@ -18,20 +18,16 @@ const insertionSort = (array) => {
   // the element before it
   // swap the element being evaluate with the element before it
   // repeat
-  let greaterThanValue;
-  let lessThanValue;
-  const sortedArray = array;
-
-  for (let i = 0; i < sortedArray.length; i++) {
-    if (sortedArray[i] < sortedArray[i - 1]) {
-      greaterThanValue = sortedArray[i - 1];
-      lessThanValue = sortedArray[i];
-      sortedArray.splice(i - 1, 0, lessThanValue);
-      sortedArray.splice(i, 0, greaterThanValue);
-      i--;
+  for (let i = 1; i < array.length; i++) {
+    let temp = array[i];
+    let j;
+    for (j = i -1; j >= 0 && array[j] > temp; j--) {
+      array[j + 1] = array [j];
     }
+    array [j + 1] = temp;
   }
-  return sortedArray;
+  return array;
+
 };
 
 console.log(insertionSort([2, 1, 3, 7, 4, 2, 9, 3, 8]));
