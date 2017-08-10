@@ -4,7 +4,9 @@
  */
 
 const isUnique = (str) => {
-
+  for (let i = 0; i < str.length; i++) {
+    let letter =
+  }
 };
 
 console.log(isUnique('abcdhijklmnopqrstuv')); // true

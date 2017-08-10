@@ -58,6 +58,11 @@ contains(foods, 'ribeye', (result) => {
 
 // Write a function called removeDuplicates that removes all duplicate values from the given array.
 // Pass the array to the callback function.  Do not mutate the original array.
+const removeDuplicates = (arr) => {
+  let newArr = [];
+  newArr = Array.from(new Set(arr));
+  return newArr;
+};
 
 removeDuplicates(foods, (uniqueFoods) => {
   console.log(`foods with duplicates removed: ${uniqueFoods}`);
