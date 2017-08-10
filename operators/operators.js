@@ -3,6 +3,7 @@
  * These functions should multiply, divide, or return the remainder of two arguments.
  * Now for the tricky part: you can only use the + and - operators to implement these functions.
  * For division just drop the remainder.
+<<<<<<< HEAD
  */
 
  const multiply = (num1, num2) => {
@@ -28,3 +29,6 @@
  const test = multiply(2,3);
 
  console.log(test);
+=======
+ */
+>>>>>>> 0ef58c9ebee3b4a315c052abd6c596ee37224fae
