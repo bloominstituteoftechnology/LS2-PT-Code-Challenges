@@ -14,6 +14,7 @@
  * };
  * breadthFirstSearch(tree, 2);// will return true before it recursively searches `z`
  */
+<<<<<<< HEAD
 
 const breadthFirstSearch = (tree = [], searchValue) => {
   // take in the tree
@@ -38,3 +39,5 @@ const tree = [
   2
 ];
 console.log(breadthFirstSearch(tree, 2));
+=======
+>>>>>>> 9523ba66842d078bb23a24fc649e5277309ffb56
