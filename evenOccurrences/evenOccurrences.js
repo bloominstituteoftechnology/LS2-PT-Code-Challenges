@@ -12,4 +12,38 @@
 
 const evenOccurence = (arr) => {
   // Your code here.
+<<<<<<< HEAD
+  const a = arr.reduce((acc, curr) => {
+  	if (typeof acc[curr] == 'undefined') {
+  		acc[curr] = 1;
+  	} else {
+  		acc[curr] += 1;
+  	}
+  	return acc;
+  }, {});
+  
+  const values = Object.values(a);
+  const keys = Object.keys(a);
+  for (let i = 0; i < values.length; i++) {
+  	
+  	if (values[i] % 2 == 0) {
+  		return keys[i];
+  	} 
+  }
+   return undefined;
 };
+
+const data = [1, 7, 2, 4, 5, 1, 6, 8, 9, 6, 4, 1];
+const onlyEven = evenOccurence(data);
+console.log(onlyEven);
+=======
+};
+<<<<<<< HEAD
+>>>>>>> a573fa2a9182487a5963e60a8994dd6be6e89206
+=======
+<<<<<<< HEAD
+>>>>>>> a573fa2a9182487a5963e60a8994dd6be6e89206
+=======
+>>>>>>> c196dd3ae8842813a734ab7abf353501ebe8d52a
+>>>>>>> 0212c041359717fe3a9ac152732d610b5796a831
+>>>>>>> 41f3304937f57850a6dacbd8a39fe09d56444667
