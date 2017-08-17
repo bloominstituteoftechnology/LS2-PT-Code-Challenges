@@ -54,8 +54,8 @@ const nFactorial = (n) => {
 const arrFactorials = [nFactorial(5), nFactorial(3)];
 
 
-console.log(arrFactorials[0]);
-console.log(arrFactorials[1]);
+//console.log(arrFactorials[0]);
+//console.log(arrFactorials[1]);
 
 
 
@@ -75,18 +75,22 @@ console.log(arrFactorials[1]);
 //           });
 
 const parallel = (arr, cb) => {
-        arr[cb];
+        arr.forEach((data, i) => {
+          cb(data);
+        });
 };
 
 parallel(arrFactorials, (tasks) => {
-     arrFactorials.forEach((element,i) => {
-       return element[i];
-     });
+     console.log(tasks);
+     // arrFactorials.forEach((element,i) => {
+     // 	console.log(element);
+     //   return element;
+     // });
 });
 
 
-const testP = parallel(arrFactorials);
-
+//const testP = parallel(arrFactorials);
+//console.log(testP);
 
 
 
