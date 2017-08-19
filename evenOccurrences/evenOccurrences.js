@@ -10,6 +10,16 @@
  *    * console.log(onlyEven); //  4
  *    */
 
+
+
 const evenOccurence = (arr) => {
   // Your code here.
+  const onlyEven = evenOccurence([1, 7, 2, 4, 5, 1, 6, 8, 9, 6, 4, 1]);
+  const arr2 = [];
+  for (i = 0; i < arr.length; i++);
+  if(arr[i] % 2 === 0) {
+    arr2.push(arr[i]);
+  }
 };
+
+console.log(onlyEven)
