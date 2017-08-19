@@ -1,5 +1,5 @@
 /*
- * Design and implement a LRU, or Least Recently Used, cache.
+ * Design and implement an LRU, or Least Recently Used, cache.
  *
  * An LRU cache gives O(1) get(key) and set(key, val) operations,
  * much like a hashtable, but once it reaches its limit for stored
