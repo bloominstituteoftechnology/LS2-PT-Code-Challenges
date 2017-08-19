@@ -5,8 +5,8 @@
  */
 
 const quickSort = (nums) => {
-	let i = 0;
-	let first = nums[0];
+  let i = 0;
+  let first = nums[0];
 	while (i < nums.length) {
 		const curr = nums[i];
 		if (curr < first) {
