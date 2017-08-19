@@ -36,4 +36,12 @@
  * });
  *
  *
+<<<<<<< HEAD
  */
+
+const parallel = (functions, cb) => {
+  
+};
+=======
+ */
+>>>>>>> 2fdac6c8ec99a416c790690a6fee505be5cb1725
