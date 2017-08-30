@@ -12,13 +12,16 @@ const quickSort = (nums) => {
 
   if(nums.length < 2) console.log(nums);
 
-  for (let i = 0; i < nums.length; i++) {
+  for (let i = 1; i < nums.length; i++) {
     if(nums[i] > pivot) bigger.push(nums[i]);
-    if(nums[i] < pivot) smaller.push(nums[i]);
+    if(nums[i] <= pivot) smaller.push(nums[i]);
   }
-
-  bigger = bigger.sort();
-  smaller = smaller.sort();
+  bigger = bigger.sort(function(a, b){
+    return a - b;
+  });
+  smaller = smaller.sort(function(a, b){
+    return a - b;
+  });
   let newArr = smaller.concat(pivot, bigger);
   return newArr;
 };
