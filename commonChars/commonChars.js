@@ -6,3 +6,18 @@
  * Example: commonCharacters('acexivou', 'aegihobu')  * 
  * Returns: 'aeiou'
 */
+
+const commonCharacters = (str1, str2) => {
+  const obj = { ' ': 3};
+  let str = '';
+  str2.forEach((char) => {
+    if (!obj[char]) obj[char] = 1;
+  });
+  str1.forEach((char) => {
+    if (obj[char] === 1) {
+      obj[char] = 2;
+      str += char;
+    }
+  });
+  return str;
+};
