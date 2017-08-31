@@ -28,3 +28,28 @@
  * cache.set("item6", 'f');
  *
  */
+class LRUCache {
+  constructor(cnumber) {
+    this.limit = number;
+    this.keys = [];
+    this.storage = {};
+  }
+
+  set (key, value) {
+    this.keys.push(key);
+    this.storage[key] = value;
+    if (this.keys.length >  this.limit) {
+      const keyToRemove = this.keys.shift();
+      delete this.storage[keyToRemove];
+    }
+  }
+
+  get (key) {
+    const indexOfKey = this.keys.indexOf(key);
+    if (indexOfKey === -1) return null;
+    this.keys.splice(indexOfKey, 1);
+    this.keys.push(key);
+    const value = this.storage[key];
+    return value;
+  }
+};

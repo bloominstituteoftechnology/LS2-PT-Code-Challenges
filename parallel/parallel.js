@@ -36,12 +36,35 @@
  * });
  *
  *
-<<<<<<< HEAD
  */
 
 const parallel = (functions, cb) => {
-  
+  const values = [];
+  let remainingItems = functions.length;
+  functions.forEach((func, i ) => {
+    func((value) => {
+      values[i] = value;
+      remainingItems--;
+      if (remainingItems === 0 ) cb(values);
+    });
+  });
 };
-=======
- */
->>>>>>> 2fdac6c8ec99a416c790690a6fee505be5cb1725
+
+parallel([
+  function(callback){
+    setTimeout(function(){
+      callback('one');
+    }, 200);
+  },
+  function(callback){
+    setTimeout(function(){
+      callback('two');
+    }, 100);
+  }
+ ],
+  // optional callback
+  (results) => {
+    // the results array will equal ['one','two'] even though
+    // the second function had a shorter timeout.
+    console.log(results); // ['one', 'two']
+ });
