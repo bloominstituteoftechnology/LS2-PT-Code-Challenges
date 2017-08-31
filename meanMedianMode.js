@@ -44,5 +44,15 @@ const getMedian = (array) => {
 }
 
 const getMode = (array) => {
-    
-}
+    return array.reduce(function(current, item) {
+        var val = current.numMapping[item] = (current.numMapping[item] || 0) + 1;
+        if (val > current.greatestFreq) {
+            current.greatestFreq = val;
+            current.mode = item;
+        }
+        return current;
+    }, {mode: null, greatestFreq: -Infinity, numMapping: {}}, array).mode;
+};
+
+console.log(meanMedMode([11,2,2,2,2,2,2,2,2,3,4,5,5,5,6,7,9]));
+console.log(meanMedMode([134343,21,23,433333,534,21,534,534,336]));
