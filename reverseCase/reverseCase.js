@@ -8,7 +8,7 @@ const reverseCase = (str) => {
 let result = '';
 for (let i = 0; i < str.length; i++) {
 let char = str[i];
-if (char == char.toLowerCase()) {
+if (char === char.toLowerCase()) {
       result = result + char.toUpperCase();
     } else {
       result = result + char.toLowerCase();

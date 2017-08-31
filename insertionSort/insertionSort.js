@@ -24,6 +24,6 @@ const insertionSort = (arr) => {
   return arr;
 };
 
-const res = insertionSort([2, 1, 3, 7, 4, 2, 9, 3, 8]);
 
-console.log(res);
+
+console.log(insertionSort([2, 1, 3, 7, 4, 2, 9, 3, 8]));

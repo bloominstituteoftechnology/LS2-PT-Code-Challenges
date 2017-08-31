@@ -37,3 +37,10 @@
  *
  *
  */
+const parallel = (functions, cb) => {
+  //create an array, call it values
+  const values = [];
+  let remaining = functions.length;
+  
+};
+
