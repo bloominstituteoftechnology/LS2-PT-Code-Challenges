@@ -6,3 +6,20 @@
  * Example: commonCharacters('acexivou', 'aegihobu')  * 
  * Returns: 'aeiou'
 */
+
+const commonChars = (str1, str2) => {
+    // Remove all whitespace and split into arrays.
+    const arr1 = str1.replace(/ /g, '').split(''); 
+    const arr2 = str2.replace(/ /g, '').split('');
+    const commons = [];
+
+    arr1.forEach((letter1) => {
+        arr2.forEach((letter2) => {
+            if (letter1 === letter2) commons.push(letter1);
+        });
+    });
+    return commons;
+    
+};
+
+console.log(commonChars('ac ex ivou', 'aegi hobu '));
