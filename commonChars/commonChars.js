@@ -6,6 +6,7 @@
  * Example: commonCharacters('acexivou', 'aegihobu')  * 
  * Returns: 'aeiou'
 */
+<<<<<<< HEAD
 
 const commonCharacters = (str1, str2) => {
   const obj = { ' ': 3};
@@ -21,3 +22,5 @@ const commonCharacters = (str1, str2) => {
   });
   return str;
 };
+=======
+>>>>>>> 1b1bf5b72e0d86acc5b9f4be8d0e4037984f9874
