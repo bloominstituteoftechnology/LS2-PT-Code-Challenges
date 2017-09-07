@@ -12,7 +12,20 @@
  */
 
 const collatzSequence = (n) => {
+    // If number is even, half it. Else multiply number by three and add one.
+    // Continue to do so until we're at 1.
+    
+    let num = n, arr = [n];
 
+    while (num !== 1) {
+        if (num % 2 === 0) {
+            num /= 2;
+        } else {
+            num = (num * 3) + 1;
+        }
+        arr.push(num);
+    }
+    return arr;
 };
 
 console.log(collatzSequence(23));
