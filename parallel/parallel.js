@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master
 /* Implement the function parallel:
  *
  * Parallel has two parameters, an array of asynchronous functions (tasks) and a callback.
@@ -35,6 +39,7 @@
  * });
  *
  *
+<<<<<<< HEAD
  */
 
 const parallel = (functions, cb) => {
@@ -76,3 +81,6 @@ const parallel = (functions, cb) => {
      // the second function had a shorter timeout.
      console.log(results); // ['one', 'two']
   });
+=======
+ */
+>>>>>>> upstream/master

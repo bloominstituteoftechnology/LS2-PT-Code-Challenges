@@ -3,6 +3,7 @@
  * These functions should multiply, divide, or return the remainder of two arguments.
  * Now for the tricky part: you can only use the + and - operators to implement these functions.
  * For division just drop the remainder.
+<<<<<<< HEAD
  */
 
 const multiply = (x, y) => {
@@ -59,3 +60,6 @@ console.log(modulo(15, 7)); // 1
 console.log(modulo(15, -7)); // -1
 console.log(modulo(-15, 7)); // -1
 console.log(modulo(-15, -7)); // -1
+=======
+ */
+>>>>>>> upstream/master

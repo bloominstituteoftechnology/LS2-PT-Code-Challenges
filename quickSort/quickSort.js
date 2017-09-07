@@ -1,10 +1,14 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/master
 /*
  * Implement the quick sort sorting algorithm. Assume the input is an array of integers.
  * https://en.wikipedia.org/wiki/Quicksort
  * https://www.khanacademy.org/computing/computer-science/algorithms#quick-sort
  */
 
+<<<<<<< HEAD
 const nums = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8];
 
 const quickSort = (nums) => {
@@ -76,3 +80,8 @@ console.log(quickSort(nums.slice())); // => [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
 // }
 
 // console.log(quicksort(array.slice())); // => [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+=======
+const quickSort = (nums) => {
+
+};
+>>>>>>> upstream/master
