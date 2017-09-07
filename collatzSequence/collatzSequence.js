@@ -12,7 +12,19 @@
  */
 
 const collatzSequence = (n) => {
-
+  let sequence = [];
+  let newNum = 0;
+  if(n === 1) return sequence;
+  if(n % 2 === 0) {
+    sequence.concat(n);
+    newNum = n / 2;
+    collatzSequence(newNum);
+  } else {
+    sequence.concat(n);
+    newNum = (n * 3) + 1
+    collatzSequence(newNum);
+  }
+  return sequence;
 };
 
 console.log(collatzSequence(23));
