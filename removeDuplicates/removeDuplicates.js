@@ -4,5 +4,14 @@
  *
  */
 const removeDuplicates = (arr) => {
-	//code here...
+  let newArr = [];
+  //this method is more time complex and not good for big data sets
+    // newArr = Array.from(new Set(arr));
+    // return newArr;
+
+  arr.forEach((item) => {
+    if (!newArr.includes(item)) newArr.push(item);
+  })
+  return newArr;
+
 };

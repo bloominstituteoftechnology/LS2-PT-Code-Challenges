@@ -11,5 +11,15 @@
  *    */
 
 const evenOccurence = (arr) => {
-  // Your code here.
+  const test1 = 'abcdhijklmnopqrstuv'; // true
+  const test2 = 'abcdefga'; // false
+
+  test1.toLowerCase();
+
+  for (let i = 0; i < test1.length; i++){
+    for(let j = 1; j < test1.length, j++) {
+      console.log(test1.charAt(i));
+      console.log(test1.charAt(j));
+    };
+  };
 };

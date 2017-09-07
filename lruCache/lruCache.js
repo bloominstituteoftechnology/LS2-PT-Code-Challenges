@@ -1,4 +1,4 @@
-/*
+/* solution: https://chrisrng.svbtle.com/lru-cache-in-javascript
  * Design and implement an LRU, or Least Recently Used, cache.
  *
  * An LRU cache gives O(1) get(key) and set(key, val) operations,
