@@ -6,3 +6,19 @@
  * Example: commonCharacters('acexivou', 'aegihobu')  * 
  * Returns: 'aeiou'
 */
+const commonChars = (str1, str2) => {
+
+    const set = new Set();
+    str1.split('').forEach(val => {
+        if (val === ' ') return; // Ignore spaces.
+        if (str2.includes(val)) set.add(val);
+    });
+
+    let commons = '';
+    set.forEach(char => {
+        commons += char;
+    });
+    return commons;
+};
+
+console.log(commonChars('ac ex ivou', 'aegi hobu '));
