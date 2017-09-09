@@ -24,9 +24,14 @@ nodeD.next = nodeE;
 const reverseLinkedList = (node) => {
  // node.next = null then return node
  // does node exist? return
-  let currentNode = node;
-  let previousNode = null;
-  while (currentNode) {
-    
+  if (head === null || head.next === null) return head;
+  let current = head;
+  let previous = null;
+  while (current) {
+    const nextNode = current.next;
+    current.next = previous;
+    previous = current;
+    current = nextNode;
   }
+  return previous;
 };
