@@ -6,21 +6,26 @@
  * Example: commonCharacters('acexivou', 'aegihobu')  * 
  * Returns: 'aeiou'
 */
-<<<<<<< HEAD
 
-const commonCharacters = (str1, str2) => {
-  const obj = { ' ': 3};
-  let str = '';
-  str2.forEach((char) => {
-    if (!obj[char]) obj[char] = 1;
+// create a set
+// iterate over str1
+  // if char is in str2 add to set
+// convert set to string
+// return string
+
+function getCommonCharacters(str1, str2) {
+  const set = new Set();
+  str1.split('').forEach(char => {
+    if (char === ' ') return;
+    if (str2.includes(char)) set.add(char);
   });
-  str1.forEach((char) => {
-    if (obj[char] === 1) {
-      obj[char] = 2;
-      str += char;
-    }
+  let commonCharacters = '';
+  set.forEach(char => {
+    commonCharacters += char;
   });
-  return str;
-};
-=======
->>>>>>> 1b1bf5b72e0d86acc5b9f4be8d0e4037984f9874
+  return commonCharacters;
+}
+
+const result = getCommonCharacters('hello world', ' hello');
+
+console.log(result);
