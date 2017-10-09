@@ -5,4 +5,7 @@
  */
 const removeDuplicates = (arr) => {
 	//code here...
+	return arr.filter((elem, pos, arr2) => {
+		return arr.indexOf(elem) == pos;
+	});
 };

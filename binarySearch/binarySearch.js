@@ -11,5 +11,18 @@
 **/
 
 const binarySearch = (nums, target) => {
+	let min = 0;
+	let max = nums.length - 1;
+	let guessIndex;
 
+	while (min <= max) {
+		guessIndex = Math.floor((min + max) / 2);
+		if (nums[guessIndex] === target) return guessIndex;
+		if (nums[guessIndex] > target) {
+			max = guesIndex = 1;
+		} else {
+			min = guessIndex + 1;
+		}
+	}
+	return -1;
 };
