@@ -28,3 +28,39 @@
  * cache.set("item6", 'f');
  *
  */
+ 
+ class LRUCache {
+   constructor(props) {
+     this.limit = props;
+     this.cache = {};
+     this.used = [];
+   }
+   set(k, v) {
+     const cacheKeys = Object.keys(this.cache);
+     if (cacheKeys.length === this.limit) {
+       const used = Object.keys(this.used);
+       let toDelete = null;
+       for (let i = 0; i < cacheKeys.length; i++) {
+         if (!this.used.includes(cacheKeys[i]) && !toDelete) toDelete = cacheKeys[i];
+       }
+       if (!toDelete) toDelete = cacheKeys[0];
+       this.remove(toDelete);
+     }
+     this.cache[k] = v;
+   }
+   get(k) {
+     if (this.cache[k]) {
+       if (this.used.includes(k)) {
+        const usedIndex = Array.prototype.indexOf.call(this.used, k);
+        this.used.splice(usedIndex, 1); 
+       }
+       this.used.push(k);
+       return this.cache[k];
+     }
+   }
+   remove(k) {
+     delete this.cache[k];
+     const usedIndex = Array.prototype.indexOf.call(this.used, k);
+     if (usedIndex > -1) this.used.splice(usedIndex, 1);
+   }
+ }
