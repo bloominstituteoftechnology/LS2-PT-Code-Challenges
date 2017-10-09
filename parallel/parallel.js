@@ -14,26 +14,55 @@
  * on the results array.
  *
  *
- * Example:
- *
- * parallel([
- *  function(callback){
- *    setTimeout(function(){
- *      callback('one');
- *    }, 200);
- *  },
- *  function(callback){
- *    setTimeout(function(){
- *      callback('two');
- *    }, 100);
- *  }
- * ],
- *  // optional callback
- *  (results) => {
- *    // the results array will equal ['one','two'] even though
- *    // the second function had a shorter timeout.
-      console.log(results); // ['one', 'two']
- * });
- *
- *
+  Example:
  */
+  
+
+
+function parallel (async_calls, shared_callback) {
+    var counter = async_calls.length;
+    var all_results = [];
+    function makeCallback (index) {
+      return function () {
+        counter --;
+        var results = [];
+        // we use the arguments object here because some callbacks 
+        // in Node pass in multiple arguments as result.
+        for (var i=0;i<arguments.length;i++) {
+          results.push(arguments[i]);
+        }
+        all_results[index] = results;
+        if (counter == 0) {
+         return shared_callback(all_results);
+        }
+      }
+    }
+  
+    for (var i=0;i<async_calls.length;i++) {
+      async_calls[i](makeCallback(i));
+    }
+  }
+
+ parallel([
+   function(callback){
+     setTimeout(function(){
+       callback('one');
+     }, 200);
+   },
+   function(callback){
+     setTimeout(function(){
+       callback('two');
+     }, 100);
+   }
+  ],
+   // optional callback
+   (results) => {
+     // the results array will equal ['one','two'] even though
+     // the second function had a shorter timeout.
+      console.log(results); // ['one', 'two']
+  });
+ 
+  
+  
+ 
+ 
